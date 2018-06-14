@@ -1,0 +1,237 @@
+.LP_FeedbackList{
+    margin:0;
+    padding-left:10px
+}
+.LP_FeedbackList-item{
+    display:block;
+    margin:0
+}
+.LP_FeedbackList-item+.LP_FeedbackList-item{
+    margin-top:10px
+}
+.LP_FeedbackItem a{
+    text-decoration:none;
+    font-weight:bold;
+    color:black
+}
+.LP_FeedbackItem a:hover{
+    color:#E56B70
+}
+.LP_FeedbackItem:after{
+    content:'';
+    display:table;
+    clear:both
+}
+.LP_FeedbackItem-link{
+    float:left;
+    display:inline-block
+}
+.LP_FeedbackItem-link:focus,.LP_FeedbackItem-link:active{
+    outline:none;
+    border:0;
+    -webkit-box-shadow:none;
+    box-shadow:none
+}
+.LP_FeedbackItem-link:hover svg path{
+    fill:#E56B70
+}
+.LP_FeedbackItem-link.LP_FeedbackItem-link--github svg{
+    -webkit-transform:scale(1.1);
+    transform:scale(1.1)
+}
+.LP_FeedbackItem-link.LP_FeedbackItem-link--mail svg{
+    -webkit-transform:scale(0.9);
+    transform:scale(0.9)
+}
+.LP_FeedbackItem-link svg{
+    width:40px;
+    height:40px
+}
+.LP_FeedbackItem-text{
+    position:relative;
+    -webkit-box-sizing:border-box;
+    box-sizing:border-box;
+    height:40px;
+    padding-left:10px;
+    float:left;
+    display:inline-block;
+    width:calc(100% - 40px)
+}
+.LP_FeedbackItem-text em{
+    font-weight:bold
+}
+.LP_FeedbackItem-text p{
+    margin:0;
+    position:relative;
+    top:50%;
+    -webkit-transform:translateY(-50%);
+    transform:translateY(-50%)
+}
+.LP_SidebarBlock+.LP_SidebarBlock{
+    margin-top:25px
+}
+.LP_Box{
+    padding-top:15px;
+    background:transparent;
+    margin-top:8px;
+    margin:8px 0 20px 0
+}
+.LP_Box:first-child{
+    padding-top:10px
+}
+.LP_Box p{
+    margin-top:3px;
+    opacity:.75;
+    font-size:12px;
+    line-height:1.25
+}
+.LP_Box label,.LP_Box .LP_Box-label{
+    font-weight:bold
+}
+.LP_Box label{
+    cursor:pointer
+}
+.LP_Box input,.LP_Box select{
+    margin-top:5px;
+    width:100%
+}
+.LP_Box input[type="checkbox"],.LP_Box select[type="checkbox"]{
+    width:auto
+}
+@media screen and (max-width: 782px){
+    .LP_Box input,.LP_Box select{
+        margin-right:0;
+        margin-left:0
+    }
+}
+.LP_Box--standOut{
+  
+}
+.LP_Box--important{
+   
+}
+.LP_Box--important *,.LP_Box--important .LP_Box-disclaimer{
+    color: #333
+}
+.LP_Box--important input{
+    border:0
+}
+.LP_Box--important p{
+    opacity:1
+}
+.LP_Box-buttonWrapper{
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-align:center;
+    -ms-flex-align:center;
+    align-items:center;
+    margin-top:15px
+}
+.LP_Box-buttonWrapper .button{
+    margin-right:10px
+}
+.LP_Box-buttonWrapper span{
+    display:none;
+    opacity:rgba(0,0,0,0.7)
+}
+.has-no-image .LP_Box-buttonWrapper span{
+    display:block
+}
+.LP_Box-checkboxGroup{
+    
+}
+.LP_Box-checkboxGroup input{
+    margin:0
+}
+.LP_Box-checkboxGroup input[type="checkbox"]{
+    margin-top:0
+}
+@media screen and (max-width: 782px){
+    .LP_Box-checkboxGroup input[type="checkbox"]{
+        width:25px
+    }
+}
+.LP_Box-checkboxGroup label{
+    font-weight:normal;
+    padding-left:5px
+}
+.LP_Box-disclaimer{
+    color:grey;
+    font-size:12px;
+    display:block;
+    padding-left:26px;
+    font-style:italic;
+    margin-top:-5px
+}
+@media screen and (max-width: 782px){
+    .LP_Box-checkboxGroup .LP_Box-disclaimer{
+        padding-left:35px
+    }
+}
+.LP_ImageHolder{
+    height:150px;
+    width:250px;
+    margin:15px 0 5px;
+    background-size:cover;
+    background-position:center;
+    position:relative
+}
+.has-no-image .LP_ImageHolder{
+    display:none
+}
+.LP_ImageHolder-remove{
+    cursor:pointer;
+    display:block;
+    width:26px;
+    height:26px;
+    border-radius:50%;
+    background:rgba(0,0,0,0.75);
+    position:absolute;
+    right:8px;
+    top:6px;
+    color:white;
+    line-height:23px;
+    text-align:center;
+    font-size:15px;
+    font-weight:100
+}
+#complete_open_graph_metabox .main-description{
+    border-bottom:1px solid #e5e5e5;
+    padding-bottom:20px
+}
+#lpSettingsPage.is-forcing-all .LP_Box-checkboxGroup:not(.is-immune){
+    opacity:.5;
+    pointer-events:none
+}
+#lpSettingsPage img{
+    max-width:100%;
+    height:auto
+}
+#lpSettingsPage #post-body:after{
+    content:'';
+    display:table;
+    clear:both
+}
+#lpSettingsPage .postbox-container:last-child h2{
+    margin-bottom:15px
+}
+#lpSettingsPage .postbox-container:last-child .block{
+    display:block
+}
+#lpSettingsPage .form-table{
+    margin-top:25px
+}
+#lpSettingsPage form tr,#lpSettingsPage form th,#lpSettingsPage form td{
+    display:block;
+    width:100%;
+    padding:0
+}
+#lpSettingsPage h2{
+    padding:0;
+    font-size:16px
+}
+#lpSettingsPage .submit{
+    margin-top:0
+}
+ 
