@@ -245,7 +245,40 @@ class OpenGraph extends Lp_Og {
             )
           )
         )
+      ),
+
+      'twitter:player' => array(
+        'attribute' => 'name',
+        'value' =>  $this->get_open_graph_processed_value('twitter:playerurl',
+          array(
+            Utilities::get_post_option('twitter:playerurl'),
+            Utilities::get_option('twitter:playerurl')
+          )
+        )
+
+
+      ),
+
+         'twitter:player:width' => array(
+        'attribute' => 'name',
+        'value' =>  $this->get_open_graph_processed_value('twitter:videowidth',
+          array(
+            Utilities::get_post_option('twitter:videowidth'),
+            Utilities::get_option('twitter:videowidth')
+          )
+        )
+         //Utilities::get_option('twitter:videowidth')
+      ),
+       'twitter:player:height' => array(
+        'attribute' => 'name',
+        'value' =>  $this->get_open_graph_processed_value('twitter:videoheight',
+          array(
+            Utilities::get_post_option('twitter:videoheight'),
+            Utilities::get_option('twitter:videoheight')
+          )
+        )
       )
+     
     );
 
 

@@ -99,6 +99,15 @@ class Settings extends Lp_Og {
 		add_settings_field( self::$options_short_prefix . '_twitter_creator', 'Default Twitter Creator', array( $this, 'cb_field_twitter_creator' ), self::$admin_settings_page_slug, self::$options_prefix . '_twitter_parameters' );
 
 		add_settings_field( self::$options_short_prefix . '_twitter_site', 'Default Twitter Site', array( $this, 'cb_field_twitter_site' ), self::$admin_settings_page_slug, self::$options_prefix . '_twitter_parameters' );
+
+
+
+		add_settings_field( self::$options_short_prefix . '_twitter_playerurl', 'Default Twitter Player Url', array( $this, 'cb_field_twitter_playerurl' ), self::$admin_settings_page_slug, self::$options_prefix . '_twitter_parameters' );
+
+		add_settings_field( self::$options_short_prefix . '_twitter_videowidth', 'Default Twitter Video Width', array( $this, 'cb_field_twitter_videowidth' ), self::$admin_settings_page_slug, self::$options_prefix . '_twitter_parameters' );
+
+
+		add_settings_field( self::$options_short_prefix . '_twitter_videoheight', 'Default Twitter Video Height', array( $this, 'cb_field_twitter_videoheight' ), self::$admin_settings_page_slug, self::$options_prefix . '_twitter_parameters' );
 	}
 
 
@@ -224,6 +233,63 @@ class Settings extends Lp_Og {
 		</fieldset>
 		<?php
 	}
+
+	public function cb_field_twitter_playerurl() {
+
+		//echo '<pre>'.print_r( Utilities::get_option('twitter:playerurl'), true).'vb</pre>';
+		?>
+		<fieldset class="LP_Box LP_Box--standOut">
+			<p>Twitter Player Url</p>
+			<input type="text" value="<?php echo Utilities::get_option('twitter:playerurl'); ?>" name="<?php echo Utilities::get_field_name('twitter:playerurl'); ?>" id="ogTwitterplayerurl" />
+
+			<div class="SK_Box-checkboxGroup">
+				<input type="checkbox" <?php echo $this->checked('twitter:playerurl_force'); ?> name="<?php echo Utilities::get_field_name('twitter:playerurl_force'); ?>" id="ogTwitterplayerurl">
+				<label for="ogTwitterplayerurl">Force Default Twitter Player Url</label>
+		
+			</div>
+
+		</fieldset>
+		<?php
+	}
+
+
+	public function cb_field_twitter_videowidth() {
+
+		//echo '<pre>'.print_r( Utilities::get_option('twitter:playerurl'), true).'vb</pre>';
+		?>
+		<fieldset class="LP_Box LP_Box--standOut">
+			<p>Twitter Video Width</p>
+			<input type="text" value="<?php echo Utilities::get_option('twitter:videowidth'); ?>" name="<?php echo Utilities::get_field_name('twitter:videowidth'); ?>" id="ogTwitterVideoWidth" />
+
+			<div class="SK_Box-checkboxGroup">
+				<input type="checkbox" <?php echo $this->checked('twitter:videowidth_force'); ?> name="<?php echo Utilities::get_field_name('twitter:videowidth_force'); ?>" id="ogTwitterVideoWidth">
+				<label for="ogTwitterplayerurl">Force Default Twitter Video Width</label>
+		
+			</div>
+
+		</fieldset>
+		<?php
+	}
+
+	public function cb_field_twitter_videoheight() {
+
+		//echo '<pre>'.print_r( Utilities::get_option('twitter:playerurl'), true).'vb</pre>';
+		?>
+		<fieldset class="LP_Box LP_Box--standOut">
+			<p>Twitter Video Height</p>
+			<input type="text" value="<?php echo Utilities::get_option('twitter:videoheight'); ?>" name="<?php echo Utilities::get_field_name('twitter:videoheight'); ?>" id="ogTwitterVideoHeight" />
+
+			<div class="SK_Box-checkboxGroup">
+				<input type="checkbox" <?php echo $this->checked('twitter:videoheight_force'); ?> name="<?php echo Utilities::get_field_name('twitter:videoheight_force'); ?>" id="ogTwitterVideoHeight">
+				<label for="ogTwitterVideoHeight">Force Default Twitter Video Height</label>
+		
+			</div>
+
+		</fieldset>
+		<?php
+	}
+
+
 
 
 	public function cb_field_twitter_description() {
