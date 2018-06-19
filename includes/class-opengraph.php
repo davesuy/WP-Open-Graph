@@ -277,7 +277,80 @@ class OpenGraph extends Lp_Og {
             Utilities::get_option('twitter:videoheight')
           )
         )
+      ),
+      'twitter:player:height' => array(
+        'attribute' => 'name',
+        'value' =>  $this->get_open_graph_processed_value('twitter:videoheight',
+          array(
+            Utilities::get_post_option('twitter:videoheight'),
+            Utilities::get_option('twitter:videoheight')
+          )
+        )
+      ),
+      'twitter:app:name:iphone' => array(
+        'attribute' => 'name',
+        'value' =>  $this->get_open_graph_processed_value('twitter:iphonename',
+          array(
+            Utilities::get_post_option('twitter:iphonename'),
+            Utilities::get_option('twitter:twitter:iphonename')
+          )
+        )
+      ),
+      'twitter:app:id:iphone' => array(
+        'attribute' => 'name',
+        'value' =>  $this->get_open_graph_processed_value('twitter:iphoneid',
+          array(
+            Utilities::get_post_option('twitter:iphoneid'),
+            Utilities::get_option('twitter:twitter:iphoneid')
+          )
+        )
+      ),
+      'twitter:app:name:ipad' => array(
+        'attribute' => 'name',
+        'value' =>  $this->get_open_graph_processed_value('twitter:iphonename',
+          array(
+            Utilities::get_post_option('twitter:iphonename'),
+            Utilities::get_option('twitter:twitter:iphonename')
+          )
+        )
+      ),
+      'twitter:app:id:ipad' => array(
+        'attribute' => 'name',
+        'value' =>  $this->get_open_graph_processed_value('twitter:iphoneid',
+          array(
+            Utilities::get_post_option('twitter:iphoneid'),
+            Utilities::get_option('twitter:twitter:iphoneid')
+          )
+        )
+      ),
+       'twitter:app:name:googleplay' => array(
+        'attribute' => 'name',
+        'value' =>  $this->get_open_graph_processed_value('twitter:googlename',
+          array(
+            Utilities::get_post_option('twitter:googlename'),
+            Utilities::get_option('twitter:twitter:googlename')
+          )
+        )
+      ),
+      'twitter:app:id:googleplay' => array(
+        'attribute' => 'name',
+        'value' =>  $this->get_open_graph_processed_value('twitter:googleid',
+          array(
+            Utilities::get_post_option('twitter:googleid'),
+            Utilities::get_option('twitter:twitter:googleid')
+          )
+        )
+      ),
+      'twitter:app:country' => array(
+        'attribute' => 'name',
+        'value' =>  $this->get_open_graph_processed_value('twitter:appcountry',
+          array(
+            Utilities::get_post_option('twitter:appcountry'),
+            Utilities::get_option('twitter:twitter:appcountry')
+          )
+        )
       )
+
      
     );
 

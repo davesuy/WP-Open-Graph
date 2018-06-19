@@ -98,6 +98,46 @@ class Metabox extends Lp_Og {
                 </fieldset>
 
 
+                  <fieldset class="LP_Box">
+                    <label for="lateralpixel_open_graph_twitter_card_iphone_name">Twitter Iphone Name</label>
+
+                     <input type="text" value="<?php echo Utilities::get_post_option('twitter:iphonename'); ?>" name="lateralpixel_open_graph_twitter_card_iphone_name" id="ogTwitterIphoneName" />
+
+                </fieldset>
+
+                <fieldset class="LP_Box">
+                    <label for="lateralpixel_open_graph_twitter_card_iphone_id">Twitter Iphone ID</label>
+
+                     <input type="text" value="<?php echo Utilities::get_post_option('twitter:iphoneid'); ?>" name="lateralpixel_open_graph_twitter_card_iphone_id" id="ogTwitterIphoneId" />
+
+                </fieldset>
+
+
+                <fieldset class="LP_Box">
+
+                    <label for="lateralpixel_open_graph_twitter_card_google_name">Twitter Google Name</label>
+
+                     <input type="text" value="<?php echo Utilities::get_post_option('twitter:googlename'); ?>" name="lateralpixel_open_graph_twitter_card_google_name" id="ogTwitterGoogleName" />
+
+                </fieldset>
+
+                <fieldset class="LP_Box">
+                    <label for="lateralpixel_open_graph_twitter_card_google_id">Twitter Google ID</label>
+
+                     <input type="text" value="<?php echo Utilities::get_post_option('twitter:googleid'); ?>" name="lateralpixel_open_graph_twitter_card_google_id" id="ogTwitterGoogleID" />
+
+                </fieldset>
+
+                  <fieldset class="LP_Box">
+                    <label for="lateralpixel_open_graph_twitter_card_app_country">Twitter App Country</label>
+
+                     <input type="text" placeholder="Two letter country code." value="<?php echo Utilities::get_post_option('twitter:appcountry'); ?>" name="lateralpixel_open_graph_twitter_card_app_country" id="ogTwitterAppCountry" />
+
+                </fieldset>
+
+
+
+
                 <fieldset class="LP_Box">
                     <label for="lateralpixel_open_graph_type">Type</label>
                     <p>If left blank, the <strong>global 'type'</strong> value will be used. If you choose to override it, make sure it follows the correct <a href="https://developers.facebook.com/docs/reference/opengraph/" target="_blank">object type formatting</a>.</p>
@@ -153,7 +193,15 @@ class Metabox extends Lp_Og {
             'twitter:creator' => esc_attr($_POST['lateralpixel_open_graph_twitter_creator']),
             'twitter:playerurl' => esc_attr($_POST['lateralpixel_open_graph_twitter_card_video_url']),
             'twitter:videowidth' => esc_attr($_POST['lateralpixel_open_graph_twitter_card_video_width']),
-            'twitter:videoheight' => esc_attr($_POST['lateralpixel_open_graph_twitter_card_video_height'])
+            'twitter:videoheight' => esc_attr($_POST['lateralpixel_open_graph_twitter_card_video_height']),
+
+
+
+            'twitter:iphonename' => esc_attr($_POST['lateralpixel_open_graph_twitter_card_iphone_name']),
+            'twitter:iphoneid' => esc_attr($_POST['lateralpixel_open_graph_twitter_card_iphone_id']),
+            'twitter:googlename' => esc_attr($_POST['lateralpixel_open_graph_twitter_card_google_name']),
+            'twitter:googleid' => esc_attr($_POST['lateralpixel_open_graph_twitter_card_google_id']),
+            'twitter:appcountry' => esc_attr($_POST['lateralpixel_open_graph_twitter_card_app_country'])
         );
 
         return update_post_meta( $post_id, self::$options_prefix, $newPostMeta );

@@ -108,6 +108,21 @@ class Settings extends Lp_Og {
 
 
 		add_settings_field( self::$options_short_prefix . '_twitter_videoheight', 'Default Twitter Video Height', array( $this, 'cb_field_twitter_videoheight' ), self::$admin_settings_page_slug, self::$options_prefix . '_twitter_parameters' );
+
+
+
+
+		add_settings_field( self::$options_short_prefix . '_twitter_iphone_name', 'Default Twitter Iphone Name', array( $this, 'cb_field_twitter_iphone_name' ), self::$admin_settings_page_slug, self::$options_prefix . '_twitter_parameters' );
+
+		add_settings_field( self::$options_short_prefix . '_twitter_iphone_id', 'Default Twitter Iphone ID', array( $this, 'cb_field_twitter_iphone_id' ), self::$admin_settings_page_slug, self::$options_prefix . '_twitter_parameters' );
+
+
+		add_settings_field( self::$options_short_prefix . '_twitter_google_name', 'Default Twitter Google Name', array( $this, 'cb_field_twitter_google_name' ), self::$admin_settings_page_slug, self::$options_prefix . '_twitter_parameters' );
+
+		add_settings_field( self::$options_short_prefix . '_twitter_google_id', 'Default Twitter Google ID', array( $this, 'cb_field_twitter_google_id' ), self::$admin_settings_page_slug, self::$options_prefix . '_twitter_parameters' );
+
+
+		add_settings_field( self::$options_short_prefix . '_twitter_app_country', 'Default Twitter App Country', array( $this, 'cb_field_twitter_app_country' ), self::$admin_settings_page_slug, self::$options_prefix . '_twitter_parameters' );
 	}
 
 
@@ -117,7 +132,7 @@ class Settings extends Lp_Og {
 
 		add_settings_section( self::$options_prefix . '_fallbacks', 'Default Fallbacks', array( $this, 'cb_fallbacks_section' ), self::$admin_settings_page_slug );
 
-		//add_settings_field( self::$options_short_prefix . '_type', 'Default Type', array( $this, 'cb_field_type' ), self::$admin_settings_page_slug, self::$options_prefix . '_fallbacks' );
+		add_settings_field( self::$options_short_prefix . '_type', 'Default Type', array( $this, 'cb_field_type' ), self::$admin_settings_page_slug, self::$options_prefix . '_fallbacks' );
 
 		add_settings_field( self::$options_short_prefix . '_title', 'Default Title', array( $this, 'cb_field_title' ), self::$admin_settings_page_slug, self::$options_prefix . '_fallbacks' );
 
@@ -242,7 +257,7 @@ class Settings extends Lp_Og {
 			<p>Twitter Player Url</p>
 			<input type="text" value="<?php echo Utilities::get_option('twitter:playerurl'); ?>" name="<?php echo Utilities::get_field_name('twitter:playerurl'); ?>" id="ogTwitterplayerurl" />
 
-			<div class="SK_Box-checkboxGroup">
+			<div class="LP_Box-checkboxGroup">
 				<input type="checkbox" <?php echo $this->checked('twitter:playerurl_force'); ?> name="<?php echo Utilities::get_field_name('twitter:playerurl_force'); ?>" id="ogTwitterplayerurl">
 				<label for="ogTwitterplayerurl">Force Default Twitter Player Url</label>
 		
@@ -261,7 +276,7 @@ class Settings extends Lp_Og {
 			<p>Twitter Video Width</p>
 			<input type="text" value="<?php echo Utilities::get_option('twitter:videowidth'); ?>" name="<?php echo Utilities::get_field_name('twitter:videowidth'); ?>" id="ogTwitterVideoWidth" />
 
-			<div class="SK_Box-checkboxGroup">
+			<div class="LP_Box-checkboxGroup">
 				<input type="checkbox" <?php echo $this->checked('twitter:videowidth_force'); ?> name="<?php echo Utilities::get_field_name('twitter:videowidth_force'); ?>" id="ogTwitterVideoWidth">
 				<label for="ogTwitterplayerurl">Force Default Twitter Video Width</label>
 		
@@ -279,7 +294,7 @@ class Settings extends Lp_Og {
 			<p>Twitter Video Height</p>
 			<input type="text" value="<?php echo Utilities::get_option('twitter:videoheight'); ?>" name="<?php echo Utilities::get_field_name('twitter:videoheight'); ?>" id="ogTwitterVideoHeight" />
 
-			<div class="SK_Box-checkboxGroup">
+			<div class="LP_Box-checkboxGroup">
 				<input type="checkbox" <?php echo $this->checked('twitter:videoheight_force'); ?> name="<?php echo Utilities::get_field_name('twitter:videoheight_force'); ?>" id="ogTwitterVideoHeight">
 				<label for="ogTwitterVideoHeight">Force Default Twitter Video Height</label>
 		
@@ -288,6 +303,103 @@ class Settings extends Lp_Og {
 		</fieldset>
 		<?php
 	}
+
+
+
+	public function cb_field_twitter_iphone_name() {
+
+		//echo '<pre>'.print_r( Utilities::get_option('twitter:playerurl'), true).'vb</pre>';
+		?>
+		<fieldset class="LP_Box LP_Box--standOut">
+			<p>Twitter Iphone Name</p>
+			<input type="text" value="<?php echo Utilities::get_option('twitter:iphonename'); ?>" name="<?php echo Utilities::get_field_name('twitter:iphonename'); ?>" id="ogTwitterIphoneName" />
+
+			<div class="LP_Box-checkboxGroup">
+				<input type="checkbox" <?php echo $this->checked('twitter:iphonename_force'); ?> name="<?php echo Utilities::get_field_name('twitter:iphonename_force'); ?>" id="ogTwitterIphoneName">
+				<label for="ogTwitterIphoneName">Force Default Twitter Iphone Name</label>
+		
+			</div>
+
+		</fieldset>
+		<?php
+	}
+
+	public function cb_field_twitter_iphone_id() {
+
+		//echo '<pre>'.print_r( Utilities::get_option('twitter:playerurl'), true).'vb</pre>';
+		?>
+		<fieldset class="LP_Box LP_Box--standOut">
+			<p>Twitter Iphone ID</p>
+			<input type="text" value="<?php echo Utilities::get_option('twitter:iphoneid'); ?>" name="<?php echo Utilities::get_field_name('twitter:iphoneid'); ?>" id="ogTwitterIphoneId" />
+
+			<div class="LP_Box-checkboxGroup">
+				<input type="checkbox" <?php echo $this->checked('twitter:iphoneid_force'); ?> name="<?php echo Utilities::get_field_name('twitter:iphoneid_force'); ?>" id="ogTwitterIphoneId">
+				<label for="ogTwitterIphoneId">Force Default Twitter Iphone ID</label>
+		
+			</div>
+
+		</fieldset>
+		<?php
+	}
+
+
+	public function cb_field_twitter_google_name() {
+
+		//echo '<pre>'.print_r( Utilities::get_option('twitter:playerurl'), true).'vb</pre>';
+		?>
+		<fieldset class="LP_Box LP_Box--standOut">
+			<p>Twitter Google Name</p>
+			<input type="text" value="<?php echo Utilities::get_option('twitter:googlename'); ?>" name="<?php echo Utilities::get_field_name('twitter:googlename'); ?>" id="ogTwitterGoogleName" />
+
+			<div class="LP_Box-checkboxGroup">
+				<input type="checkbox" <?php echo $this->checked('twitter:googlename_force'); ?> name="<?php echo Utilities::get_field_name('twitter:googlename_force'); ?>" id="ogTwitterGoogleName">
+				<label for="ogTwitterGoogleName">Force Default Twitter Google Name</label>
+		
+			</div>
+
+		</fieldset>
+		<?php
+	}
+
+	public function cb_field_twitter_google_id() {
+
+		//echo '<pre>'.print_r( Utilities::get_option('twitter:playerurl'), true).'vb</pre>';
+		?>
+		<fieldset class="LP_Box LP_Box--standOut">
+			<p>Twitter Google ID</p>
+			<input type="text" value="<?php echo Utilities::get_option('twitter:googleid'); ?>" name="<?php echo Utilities::get_field_name('twitter:googleid'); ?>" id="ogTwitterGoogleId" />
+
+			<div class="LP_Box-checkboxGroup">
+				<input type="checkbox" <?php echo $this->checked('twitter:googleid_force'); ?> name="<?php echo Utilities::get_field_name('twitter:googleid_force'); ?>" id="ogTwitterGoogleId">
+				<label for="ogTwitterGoogleId">Force Default Twitter Google ID</label>
+		
+			</div>
+
+		</fieldset>
+		<?php
+	}
+
+	public function cb_field_twitter_app_country() {
+
+		//echo '<pre>'.print_r( Utilities::get_option('twitter:playerurl'), true).'vb</pre>';
+		?>
+		<fieldset class="LP_Box LP_Box--standOut">
+			<p>Twitter App Country</p>
+			<input type="text" value="<?php echo Utilities::get_option('twitter:appcountry'); ?>" name="<?php echo Utilities::get_field_name('twitter:appcountry'); ?>" id="ogTwitterAppCountry" />
+
+			<div class="LP_Box-checkboxGroup">
+				<input placeholder="Two letter country code." type="checkbox" <?php echo $this->checked('twitter:appcountry_force'); ?> name="<?php echo Utilities::get_field_name('twitter:appcountry_force'); ?>" id="ogTwitterAppCountry">
+				<label for="ogTwitterAppCountry">Force Default Twitter App Country</label>
+		
+			</div>
+
+		</fieldset>
+		<?php
+	}
+
+	
+
+
 
 
 
